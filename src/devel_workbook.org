@@ -1,0 +1,791 @@
+#+PROPERTY: noweb yes
+#+PROPERTY: padline no
+
+# Muista tehdä linkki TMaVT osoittamaan oikeaan paikkaan, joka on kirjasto,
+# josta löytyy model_io.py. Tarvitaan, kun LSTS käännetään lisp-rakenteeksi.
+# Tällä hetkellä lisätyökaluja ei välttämättä tarvita autogit.el tiedoston
+# kasaamiseen (tangling)
+
+#+begin_src emacs-lisp :exports none :results value silent
+  (progn
+    (require 'ob-python)
+    (setq org-confirm-babel-evaluate (lambda (lang body)
+                                         (not (or (string= lang "python")
+                                                  (string= lang "emacs-lisp")))))
+    )
+#+end_src
+
+* Licence and user documentation
+
+#+name: product_title
+#+begin_src text
+autogit-mode for GNU Emacs
+#+end_src
+
+#+name: header_license_text
+#+begin_src text
+Version: alpha - 0.1 (not a true mode yet)
+Copyright: Heikki Virtanen (2013)
+License: GPL
+Homepage: https://github.com/hessuvi/autogit_mode
+
+Purpose: Keep working repository (and opened files) in sync with its
+         upstream automatically.
+
+Architecture:
+  - Global mode. All open buffers visiting file in git repository are
+    tracked by autogit. (Note: Autogit works in local mode, if current
+    branch have no upstream set.)
+
+  - Each repository is tracked separately.
+
+Setting up:
+  + Ones:
+    - git config --global merge.conflictstyle diff3
+    - git config --global push.default upstream
+
+  + For each repository and branch, which are intended to be synced
+    automatically:
+    - git branch --set-upstream ...
+
+Usage:
+  - emacs --load <path to autogit.el>
+  - autogit works seamlessly in background and no explicit actions are
+    needed.
+
+Hints:
+  - Be careful with sensitive data! Setup your .gitignore in advance,
+    if you do not have any other choice than keeping sensitive data
+    within the repository.
+  - If git merge --squash is used for integration, new session branch have
+    to be created and have to be based on the tip of the integration branch.
+  - Magit (http://magit.github.io/magit/) is still useful. This is not
+    replacement of any Emacs' VC package.
+  - GPG agent can be used as ssh-agent replacement. Advance is that
+    private keys are decrypted only when needed.
+#+end_src
+#+begin_src emacs-lisp :tangle ../autogit.el
+;; <<product_title>>
+;;
+;; <<header_license_text>>
+;;
+
+#+end_src
+
+#+begin_src text :tangle ../readme.txt
+,* <<product_title>>
+
+<<header_license_text>>
+
+,* Why
+
+Collaboration is one of the key elements of productivity and pleasure.
+Unfortunately, web based solutions have many nasty problems. Those lack
+decent editing capabilities for text and source code, there is no support
+for working off-line, data is stored in dedicated server which is maintained
+solely by service provider and it is not possible to set up or buy
+independent server sided services, a few to mention.
+
+Git and Emacs with Magit is a handy tool combination and functionally it is
+sufficient working environment. However, user experience is still somewhat
+clumsy, since staging, committing, pulling, and pushing have to be done
+manually over and over again. And it is easy to forget to commit and push
+the last modifications of the day. Automation can help on these problems,
+so, why not to use it?
+
+,* How
+
+Formal methods are seen as a waterfall century dinosaurs and anything but
+agile. But have anybody tried to use them in order to make programming more
+straightforward and gain development speed? This is small experiment for
+that.
+
+There have been following development steps:
+1. Identified operating scenarios was combined into a single, transition
+   based behavioural model.
+2. The model was minimised and validated and verified using Tampere
+   Verification Tool and visual verification
+   (https://github.com/hessuvi/TampereVerificationTool).
+3. The behavioural model, aka state machine, was translated algorithmically
+   to Emacs-lisp data structure, which is core of the system. Also, the
+   functionality for wandering in the state machine was implemented.
+4. The system was first tested with stub functions for the actions.
+5. And finally, the actions was implemented and the system was tested in
+   real-world conditions.
+
+Unfortunately, all tools used in the development process are not publicly
+available yet. One purpose of this project was to test this new development
+method and tools supporting it and some new requirements was found. The
+auxiliary tools will be released when these new features are decently
+implemented.
+#+end_src
+
+* Käyttöön ja käyttöönottoon liittyviä seikkoja
+
+** Mahdollisia riskitekijöitä
+
+  - Johonkin tiedostoon kirjoitettu sensitiivinen data lähtee turhan
+    liukkaasti maailmalle, jos ei ole laittanut .gitignore tiedostoa ennalta
+    kuntoon.
+  - Suorituskyvystä voi joissain tapauksissa tulla ongelma. Jos jostain
+    syystä git pull ja push kestää, niin järjestelmästä tulee lähes
+    käyttökelvoton, koska niitä tehdään paljon ja muuten nopeiden
+    operaatioiden yhteydessä.
+
+** Emacs
+
+  - Ei vaadita mitään erityisiä toimia. Ladataan autogit.el ja se aktivoi
+    read, after-save ja kill-buffer hookit tuottamaan autogit sydeemin
+    tuntemia herätteitä.
+
+  - Tiedostojen tuhoaminen ei päivity gitille automaattisesti, vaikka sen
+    tekisi dired ympäristön kautta. Siksi kaveriksi suositellaan Emacsin
+    magit pakettia, jonka avulla voi seurata gitin toimintaa ja tarvittaessa
+    antaa lisäkomentoja.
+
+
+** git
+
+Käyttäjän pitäisi osata
+- Määritellä repon asetukset niin, että git pull ja git push toimivat
+  järkevästi ilman parametrejä. (autogit toimii pelkästään paikallisesti jos
+  parametrittomat versiot palauttavat virheen.
+
+(TODO: ikuisen silmukan esto  git push komennon epäonnistuessa toistuvasti)
+
+- Olla käsitys, mitä konfliktin korjaaminen käytännössä tarkoittaa.
+
+- Tarvittavia protokollia (esim. ssh ja https) varten sellaiset säädöt,
+  ettei salakalaa kysytä interaktiivisesti päätteeltä. Graafisessa
+  ympäristössä popup OK. (Itse tykkään gpg-agenttista ssh-agent ohjelman
+  korvaajana.)
+
+
+* Visioituja käyttöskenaarioita
+
+** Tärkeä kirjoitus tai ohjelmointityö
+
+   ... jonka varmuuskopion haluaa aina olevan ajan tasalla toisella koneella.
+
+** Ohjelmointi/kirjoittaminen kaverien kanssa.
+
+   Työpöydällä on auki myös skype tai irc, jonka kautta voi keskustella.
+
+
+** Sosiaalisen median alusta
+
+   - Jossain on ajossa gitolite ja sen huomassa repo keskusteluryhmää
+     varten.
+   - Emacsin org-mode asetetaan käyttämään joitain paikallisen repon
+     tiedostoja kalenteritiedostoina, joista kerätään tiedot agenda näkymään.
+   - Jokaisen päivityksen otsikon yhteyteen kirjoitetaan nimimerkki tagiksi
+     ja otsikon alle päivämäärä ja kellonaika. Näin mielenkiintoiset jutut
+     voi poimia suoraan agenda näkymästä.
+
+
+* Toteutustekniikka ja arkkitehtuuri
+
+
+* Development notes
+
+** DONE Toteutusvälineet: SM-lang kieleen monta tapahtuman lopputilaa
+
+Seuraavassa on käytetty uutta funktiokutsun kaltaista syntaksia, jossa
+sanoman paluuarvo määrää lopputilan. Tilakonekielen kääntäjään pitää vielä
+ohjelmoida vastaava rakenne. Toteutusarvaus on, että ensin funktiokutsua
+vastaava tilasiirtymä ja sen lopputilasta indeksiin perustuvat sisäiset
+siirtymät määriteltyihin lopputiloihin.
+
+Seuraavia tiedostoja tarvitsee muuttaa.
+file:~/Tutkimus/Tools/TVT-AddOns/sm_lang_comp.py
+file:~/Tutkimus/Tools/TVT-AddOns/TMaVT/tok_sm_lang.py
+
+** TODO Muistiinpanoja mietinnässä olevista asioista [5/8]
+
+Seuraavassa vielä hieman löydettyjä puutteita ja toteutuksessa huomioon
+otettavia asioita:
+  - [X] add voit myös epäonnistua (tiedostoa ei voi lisätä repoon)
+
+  - [X] commit epäonnistuu myös siksi, että ei ole mitään commitoitavaa.
+    Tällöinkin pitäisi kai tehdä syncci. Jos commit epäonnistuu muusta
+    syystä, seuraava pull epäonnistuu myös. Merge conflictin jälkeen tulee
+    aina jotain kommitoitavaa, joten silloin lienee turvallista käyttää
+    commitin paluuarvoa haarautumiseen (TESTATTAVA!!!).
+
+  - [X] Tiloissa unstable_state ja repair odotellaan, että käyttäjä tekee
+    jonkin mainituista asioista. Käyttäjä voi tehdä toki muutakin, mutta
+    siitä järjestelmä ei välitä.
+
+  - [X] Myös järjestelmän omat tekemiset aiheuttavat järjestelmän
+    tunnistamia herätteitä. Tästä syystä herätteiden vastakutsujen pitää
+    tunnistaa aluksi tarkistaa, ollaanko suorittamassa järjestelmän koodia
+    vai ei.
+
+  - [X] Paikallinen repository voi olla muuttunut editointi-istuntojen
+    välillä, tai jopa istunnon aikana. Toisaalta pull epäonnistuu, jos on
+    paikallisia muutoksia tallentamatta versionhallintaan. Eli no problemo.
+
+  - [ ] On vähän ikävää, ettei autogit moodin aktivoituessa käydä avoinna
+    olevia puskureita lävitse ja lisätä niitä vastaaviin repoihin. Tulee
+    toimeen ilmankin, mutta hommaan jää vähän yllätyksiä.
+
+    Toteutuksena tämä kai menisi niin, että
+    1. Jokaiselle avoinna olevalle bufferille
+       1. Jos bufferilla on tiedosto, valitaan bufferi aktiiviseksi.
+       2. Pyydetään bufferia vastaava repo ja aktivoidaan se.
+       3. Ajetaan autogit-append bufferille.
+
+    Itse asiassa tämä olisi erittäin tärkeä ominaisuus. Ilman tätä jää
+    vaaraksi, että sellainen tiedosto, jota on muutettu mutta ei
+    tallennettu, muuttuu taustalla levyllä, jolloin käyttäjä on pienoisissa
+    vaikeuksissa.
+
+  - [ ] Vastaavasti autogit-modea deaktivoitaessa pitäisi kaikki autogitin
+    työbufferit poistaa. Eli jälleen tarvitaan yksi lista, johon ne on kerätty.
+
+  - [ ] Rakentaa autogit oikeaksi gloaaliksi modeksi, jonka saa autogit-mode
+    funktiota ajamalla päälle ja pois.
+
+* Implementation
+
+** Behavioural model for repository object
+
+[2013-09-30 ma] Tässä vielä kerran uusiksi tehty repositoryn toimintaa
+vastaava tilakone. Nyt tekemisen mallina oli iteratiivinen prosessi.
+Kuvataan lineaarisia sekvenssejä ja haarautumisen paikoissa laitetaan muihin
+vaihtoehtoihin lukkiuma merkiksi. Näistä keskeneräisiksi jääneistä kohdista
+jatkettiin myöhemmin. Myöskään tilakoneen yksinkertaisuuteen tai
+ylläpidettävyyteen ei kiinnitetty erityistä huomiota. Korvaukseksi tein
+python scriptin, joka muuntaa kutistetun tilakoneen sellaiseen muotoon, että
+siinä voi samoilla elispillä.
+
+#+begin_src fundamental :tangle uusi_versio.sml
+REPO -> i_wait
+ * i_wait : "open" -> s1
+   	    "kill" -> i_wait
+            "revert" -> i_wait
+	    "save" -> i_save
+ * s1 : "autogit-append" -> s2_
+ * s2_ : "autogit-unsaved-changes" -> ( n_wait n3 )
+ * s2 : "autogit-do-pull" -> ( s3 i_repair )
+ * s3 : "autogit-do-push" -> ( s4 s2 )
+ * s4 : "autogit-revert-all" -> n_wait
+ * i_save : "autogit-append" -> s6
+ * s6 : "autogit-do-add" -> ( nC nC )
+ * s7 : "autogit-do-commit" -> ( s8 s8 )
+ * s8 : "autogit-do-pull" -> ( s9 i_repair )
+ * s9 : "autogit-do-push" -> ( sA s8 )
+ * sA : "autogit-revert-all" -> n_wait
+ * n_wait : "open"   -> n1
+            "save"   -> nA
+   	    "kill"   -> m0
+	    "revert" -> nC
+
+ * n1 : "autogit-append" -> n2
+ * n2 : "autogit-unsaved-changes" -> ( n_wait n3 )
+ * n3 : "autogit-do-pull" -> ( n4 i_repair )
+ * n4 : "autogit-do-push" -> ( s4 n3 )
+ * nA : "autogit-append" -> nB
+ * nB : "autogit-do-add" -> ( nC nC )
+ * nC : "autogit-unsaved-changes" -> ( n_wait nD )
+ * nD : "autogit-do-commit" -> ( n3 n3 )
+
+ * m0 : "autogit-remove" -> nC
+
+ * i_repair : "autogit-revert-all" -> r_wait
+ * r_wait : "open"   -> r1
+	    "save"   -> rA
+	    "kill"   -> rX
+	    "revert" -> rC
+
+ * r1 : "autogit-append" -> r_wait
+ * rA : "autogit-append" -> rB
+ * rB : "autogit-do-add" -> ( rC rC )
+ * rC : "autogit-unsaved-changes" -> (r_wait rD)
+ * rD : "autogit-do-commit" -> ( n3 r_wait )
+ * rX : "autogit-remove" -> rC
+#+end_src
+
+[2013-10-01 ti] Yllä olevaa lienee mahdollista optimoida tuottamaan
+pienempi ajettava LSTS. Koska repon alkutilassa voi tulla vain heräte
+open tai save, niin on aivan sama, minne revert ja kill
+ohjataan. Sopivilla valinnoilla lopputuloksessa tilat i_wait ja n_wait
+saattaisivat yhdistyä. Teorian tasolla tämän mahdollisuuden voi
+testata, kytkemällä eri vaihtoehtojen rinnalle tilakoneen
+#+begin_src fundamental :tangle repo_usage.sml
+REPO_USE -> s0
+ * s0 : "open" -> s1
+        "save" -> s1
+ * s1 : "open" -> s1
+	"save" -> s1
+	"revert" -> s1
+	"kill" -> s1
+#+end_src
+Jos rinnankytkentöjen lopputuloset ovat toiminnallisesti samat, tehty
+muunnos on laillinen.
+
+#+begin_src fundamental :tangle optimised_repo.sml
+REPO -> i_wait
+ * i_wait : "open" -> s1
+   	    "kill" -> m0
+            "revert" -> nC
+	    "save" -> i_save
+ * s1 : "autogit-append" -> s2_
+ * s2_ : "autogit-unsaved-changes" -> ( n_wait n3 )
+ * s2 : "autogit-do-pull" -> ( s3 i_repair )
+ * s3 : "autogit-do-push" -> ( s4 s2 )
+ * s4 : "autogit-revert-all" -> n_wait
+ * i_save : "autogit-append" -> s6
+ * s6 : "autogit-do-add" -> ( nC nC )
+ * s7 : "autogit-do-commit" -> ( s8 s8 )
+ * s8 : "autogit-do-pull" -> ( s9 i_repair )
+ * s9 : "autogit-do-push" -> ( sA s8 )
+ * sA : "autogit-revert-all" -> n_wait
+ * n_wait : "open"   -> n1
+            "save"   -> nA
+   	    "kill"   -> m0
+	    "revert" -> nC
+
+ * n1 : "autogit-append" -> n2
+ * n2 : "autogit-unsaved-changes" -> ( n_wait n3 )
+ * n3 : "autogit-do-pull" -> ( n4 i_repair )
+ * n4 : "autogit-do-push" -> ( s4 n3 )
+ * nA : "autogit-append" -> nB
+ * nB : "autogit-do-add" -> ( nC nC )
+ * nC : "autogit-unsaved-changes" -> ( n_wait nD )
+ * nD : "autogit-do-commit" -> ( n3 n3 )
+
+ * m0 : "autogit-remove" -> nC
+
+ * i_repair : "autogit-revert-all" -> r_wait
+ * r_wait : "open"   -> r1
+	    "save"   -> rA
+	    "kill"   -> rX
+	    "revert" -> rC
+
+ * r1 : "autogit-append" -> r_wait
+ * rA : "autogit-append" -> rB
+ * rB : "autogit-do-add" -> ( rC rC )
+ * rC : "autogit-unsaved-changes" -> (r_wait rD)
+ * rD : "autogit-do-commit" -> ( n3 r_wait )
+ * rX : "autogit-remove" -> rC
+#+end_src
+
+Tarkistukset todistivat, että oletetulla tavalla käytettynä optimoitu versio
+on ekvivalentti alkuperäisen kanssa. Minimoitu lopputulos on tällainen.
+#+begin_src fundamental
+START -> st_6
+ * st_6 : "revert" -> st_7
+        "kill" -> st_15
+        "save" -> st_10
+        "open" -> st_23
+ * st_23 : "autogit-append" -> st_5
+ * st_5 : "autogit-unsaved-changes" -> ( st_6 st_3 )
+ * st_3 : "autogit-do-pull" -> ( st_1 st_21 )
+ * st_21 : "autogit-revert-all" -> st_19
+ * st_19 : "revert" -> st_16
+        "kill" -> st_14
+        "save" -> st_12
+        "open" -> st_20
+ * st_20 : "autogit-append" -> st_19
+ * st_12 : "autogit-append" -> st_11
+ * st_11 : "autogit-do-add" -> ( st_16 st_16 )
+ * st_16 : "autogit-unsaved-changes" -> ( st_19 st_25 )
+ * st_25 : "autogit-do-commit" -> ( st_3 st_19 )
+ * st_14 : "autogit-remove" -> st_16
+ * st_1 : "autogit-do-push" -> ( st_17 st_3 )
+ * st_17 : "autogit-revert-all" -> st_6
+ * st_10 : "autogit-append" -> st_9
+ * st_9 : "autogit-do-add" -> ( st_7 st_7 )
+ * st_7 : "autogit-unsaved-changes" -> ( st_6 st_26 )
+ * st_26 : "autogit-do-commit" -> ( st_3 st_3 )
+ * st_15 : "autogit-remove" -> st_7
+#+end_src
+./next_generation.svg
+
+
+Seuraavassa on vanha versio, jonka kääntäminen ajettavaksi LSTS:ksi ei olisi
+ollut mahdollista. Tai olisi saattanut ollakin, mutta halusin kokeilla,
+miten toimintaa ohjaavan tilakoneen tekeminen inkrementaalisesti ja
+suorituspolku kerrallaan onnistuisi. Samalla tuli käytettyä aitoja
+tapahtumien nimieä.
+
+#+begin_src fundamental
+REPO -> not_exists
+ * not_exists : "open" -> n_add_buffer
+ * n_add_buffer: "append" -> need_sync
+ * need_sync : "pull" -> ( s2  to_repair )
+ * s2 : "push" -> ( s3  need_sync )
+ * s3 : "revert_all" -> unstable_state
+ * unstable_state : "save" -> q1
+                    "revert" -> test_state
+                    "kill_buffer" -> n_kill_buff
+ 		    "open" -> do_append
+ * q1 : "add" -> test_state
+ * test_state : "unsaved_changes" -> (unstable_state  do_commit)
+ * do_append : "append" -> test_for_sync
+ * n_kill_buff : "remove" -> test_state
+ * test_for_sync : "unsaved_changes" -> (unstable_state  need_sync)
+ * do_commit : "commit" -> (need_sync  need_sync)
+ * to_repair : "revert_all" -> repair
+ * repair : "save" -> r1
+            "revert" -> repair_test
+ 	    "kill_buffer" -> r_kill_buff
+ 	    "open" -> r_add_buffer
+ * r_add_buffer : "append" -> repair
+ * r_kill_buff : "remove" -> repair_test
+ * r1 : "add" -> repair_test
+ * repair_test : "unsaved_changes" -> (repair  repair_commit)
+ * repair_commit : "commit" -> (need_sync  repair)
+#+end_src
+
+
+Vaikka tuo tilakone näyttää hyvin ilmeiseltä, sen kasaaminen ei mennyt
+kivuttomasti. Loppujen lopuksi tarvittiin kovin monta yritystä aikaisemmin
+tehdyn toimivan prototyypin lisäksi, ennenkuin keskeinen olio ja näkökulma
+löytyi. On liian helppo ajatua harhateille.
+
+[2013-09-24 ti] Kaiken lisäksi tilakoneeseen oli jäänyt virheitä, jotka
+onneksi huomasi, kun muotoili tilakoneen piirrosta. Sen jälkeen kun git on
+voinut muuttaa tiedostoja, ennenkuin aloitetaan käyttäjän herätteen
+odottaminen, pitää kaikki avoinna olevat bufferit päivittää vastaamaan levyn
+tilannetta. Ainoa tiedostoja mahdollisesti muuttava git komento on pull.
+Lisäksi tiedoston avaamisen jälkeen bufferi pitää lisätä repon buffereiden
+joukkoon.
+
+[2013-09-24 ti] Edelleen jäi huomaamatta, että myös bufferin tappamisen
+täytyy heijastua avoimien puskureiden listaan, mistä seuraa, että
+tilakoneeseen täytyy tehdä vastaavat siirtymät. Tämän huomasin vasta
+koodauksen yhteydessä. Eli onpas ohjelmointi hankalaa.
+
+[2013-09-24 ti] Korjatun tilakoneen tarkastuksessa havaitsin vielä, että
+pull ja push muodostaa epäilyttävän silmukan. Jos pull ja push tehdään eri
+repoon, mikä ei ole tavallista, järjestelmä voi jäädä ikuiseen silmukkaan,
+jos pull onnistuu, mutta push ei. Toisaalta yleisin syy push-komennon
+epäonnistumiseen on, että joku muu ehti laittamaan yhteiseen repoon tavaraa
+edeltävän pull-komennon jälkeen, jolloin uusi pull korjaa tilanteen.
+
+Tässäkin ihminen käsittelee editorin välityksellä tiedostoja, mutta se ei
+ole olennaista. Olennaista on, miten tiedostoille tehtävät asiat heijastuvat
+repositoriin ja mitkä tehtävistä asioista voivat toimia trikkereinä.
+
+Toinen viivyttävä seikka on elisp-kielen outous itselle. Lisp (scheme) on
+sinänsä tuttu kieli, mutta elispissä muuttujien näkyvuus ja mekanismit
+olio-ohjelmointiin ovat ihan erilaiset. Myös shell komentojen tulosten
+uittaminen muuttujien arvoiksi on konstikasta, mutta onneksi mahdollista.
+
+** Repository object
+
+#+begin_src emacs-lisp :tangle ../autogit.el
+(defvar autogit-current-state nil)
+(defvar autogit-open-buffers nil)
+(defvar autogit-active nil)
+
+(defun autogit-current-repository ()
+  <<impl_get_current_repository>>
+  )
+
+(defun autogit-get-create-repo-obj ()
+  (let* ((buff-name (autogit-current-repository))
+	 (repo-buff (if buff-name (get-buffer buff-name) nil)))
+    (if (not buff-name) nil
+      (if repo-buff repo-buff
+	(get-buffer-create buff-name)
+	(with-current-buffer buff-name
+	  (make-local-variable 'autogit-current-state)
+	  (setq autogit-current-state autogit-init-state)
+	  (make-local-variable 'autogit-open-buffers)
+	  (setq autogit-open-buffers ())
+          (autogit-travel-path 'init " command output")
+	  (goto-char (point-min))
+	  )
+	(get-buffer buff-name)))))
+#+end_src
+
+#+name: impl_get_current_repository
+#+begin_src emacs-lisp
+(let* ((tmp-name " command output")
+       (tmp-buff (progn (if (get-buffer tmp-name) (kill-buffer tmp-name))
+			(get-buffer-create tmp-name)))
+       (retcode (call-process "git" nil tmp-buff nil "rev-parse" "--git-dir"))
+       (retval (if (eq 0 retcode)
+		   (with-current-buffer tmp-buff
+		     (buffer-substring-no-properties (point-min) (- (point-max) 1)))
+		 nil)))
+  (if retval (file-truename retval) nil))
+#+end_src
+
+** Repository behaviour as a state machine
+
+#+begin_src emacs-lisp :tangle ../autogit.el
+(defvar autogit-repo-transition-table ()
+  "Autogit repository transitions table")
+(defvar autogit-init-state nil)
+(setq autogit-repo-transition-table
+  <<converted_transition_table>>
+  )
+(defun autogit-skip (buff)
+  (insert "-------------------------\n")
+  't)
+
+(defun autogit-travel-path (msg real-buffer)
+  (if (cdr-safe autogit-current-state)
+      (setq autogit-current-state
+	    (cdr-safe (assoc msg autogit-current-state))))
+  (if (not autogit-current-state)
+      (insert "Internal error: State machine broken: no source state.\n"))
+  (while (and autogit-current-state (not (cdr-safe autogit-current-state)))
+    (let* ((tr (assoc autogit-current-state autogit-repo-transition-table))
+	   (func (if tr (nth 1 tr) (insert "Internal error: State machine broken: state undefined\n") nil))
+	   (next-sts (if tr (nth 2 tr) (insert "Internal error: State machine broken: state undefined\n") nil)))
+      (setq autogit-current-state
+	    (if (funcall func (get-buffer real-buffer))
+		(car next-sts)
+	      (car (cdr next-sts))))))
+  autogit-current-state
+  )
+#+end_src
+
+Following is state machine data structure. It is provided for your
+convenience, because TMaVT is not available yet and it can not be produced
+on the fly during tangling.
+
+#+call: lsts_to_elisp_converter(LSTS="next_generation.lsts")
+
+#+name: converted_transition_table
+#+begin_src emacs-lisp
+(progn (setq autogit-init-state "st_6")
+'(
+  ("st_6" autogit-skip (("waiting_input"
+      ( revert . "st_7")
+      ( kill . "st_15")
+      ( save . "st_10")
+      ( open . "st_23")
+     )  nil ) )
+  ("st_23" autogit-append (  "st_5" "st_5" ) )
+  ("st_5" autogit-unsaved-changes ( "st_6" "st_3" ) )
+  ("st_3" autogit-do-pull ( "st_1" "st_21" ) )
+  ("st_21" autogit-revert-all (  "st_19" "st_19" ) )
+  ("st_19" autogit-skip (("waiting_input"
+      ( revert . "st_16")
+      ( kill . "st_14")
+      ( save . "st_12")
+      ( open . "st_20")
+     )  nil ) )
+  ("st_20" autogit-append (  "st_19" "st_19" ) )
+  ("st_12" autogit-append (  "st_11" "st_11" ) )
+  ("st_11" autogit-do-add ( "st_16" "st_16" ) )
+  ("st_16" autogit-unsaved-changes ( "st_19" "st_25" ) )
+  ("st_25" autogit-do-commit ( "st_3" "st_19" ) )
+  ("st_14" autogit-remove (  "st_16" "st_16" ) )
+  ("st_1" autogit-do-push ( "st_17" "st_3" ) )
+  ("st_17" autogit-revert-all (  "st_6" "st_6" ) )
+  ("st_10" autogit-append (  "st_9" "st_9" ) )
+  ("st_9" autogit-do-add ( "st_7" "st_7" ) )
+  ("st_7" autogit-unsaved-changes ( "st_6" "st_26" ) )
+  ("st_26" autogit-do-commit ( "st_3" "st_3" ) )
+  ("st_15" autogit-remove (  "st_7" "st_7" ) )
+))
+#+end_src
+
+** Implementations for the actions
+
+#+begin_src emacs-lisp :tangle ../autogit.el
+(defun autogit-unsaved-changes (buff)
+  (insert "Is there unsaved buffers in " (buffer-name) "?\n")
+  (let ((buffs autogit-open-buffers)
+	(stop nil))
+    (while (progn
+	     (if buffs
+		 (let* ((cub (car buffs))
+			(modified (buffer-modified-p cub))
+			(visits (buffer-file-name cub)))
+		   (setq stop (or stop (and modified visits)))
+		   (if (and stop visits)
+		       (insert (concat visits " is under modification.\n"))
+		     (setq buffs (cdr buffs)))))
+	     (and (not stop) buffs)))
+    stop))
+
+(defun autogit-append (buff)
+  (insert (concat "Tracking file: " (buffer-file-name buff) "\n"))
+  (if (not (buffer-file-name buff)) 't
+    (or (member buff autogit-open-buffers)
+	(setq autogit-open-buffers (cons buff autogit-open-buffers)))
+    't))
+
+(defun autogit-remove (buff)
+  (insert (concat "Releasing file: " (buffer-file-name buff) "\n"))
+  (setq autogit-open-buffers (delete buff autogit-open-buffers))
+  't)
+
+(defun autogit-revert-all (buff)
+  (insert (concat "Reverting files of the repository " (buffer-name) "\n"))
+  (let ((buffs autogit-open-buffers))
+    (while buffs
+      (let* ((buffa (car buffs))
+	     (rest-buffs (cdr buffs))
+	     (visits (buffer-file-name buffa))
+	     (modified (buffer-modified-p buffa))
+	     (may-revert (and visits (not modified))))
+	(if may-revert
+	    (with-current-buffer buffa
+	      (condition-case EDATA
+		  (revert-buffer 't 't 't)
+		(error (message "Revert problem: %s - %s"
+				(car EDATA) (cdr EDATA )))
+		)))
+	(setq buffs rest-buffs))))
+  't)
+
+(defun autogit-do-pull (buff)
+  (insert (concat "git pull in " (buffer-name) "\n"))
+  (equal 0 (call-process "git" nil nil nil "pull" "--no-edit")))
+
+(defun autogit-do-push (buff)
+  (insert (concat "git push in " (buffer-name) "\n"))
+  (equal 0 (call-process "git" nil nil nil "push")))
+
+(defun autogit-do-add (buff)
+  (insert (concat "git add " (buffer-file-name buff) "\n"))
+  (equal 0 (call-process "git" nil nil nil "add" (buffer-file-name buff))))
+
+(defun autogit-do-commit (buff)
+  (insert (concat "git commit in " (buffer-name) "\n"))
+  (equal 0 (call-process
+	    "git" nil nil nil "commit" "-m" "... autogit-mode session")))
+#+end_src
+
+** Hooks
+
+#+begin_src emacs-lisp :tangle ../autogit.el
+(defun autogit-hook-function (operation)
+  (if autogit-active 't
+    (message "Autogit hook: %s-%s"
+	     operation
+	     (if (buffer-file-name)
+		 (buffer-file-name)
+	       (if (buffer-name) (buffer-name)
+		 "Killed buffer")))
+    (setq autogit-active 't)
+    (let* ((real-buffer (current-buffer))
+	   (repo-obj (autogit-get-create-repo-obj))
+	   )
+      (if (not repo-obj) 't
+	(with-current-buffer repo-obj
+	  (let* ((msg (cond
+		       ((equal 'read operation)
+			(if (member real-buffer autogit-open-buffers)
+			    'revert
+			  'open))
+		       ((equal 'save operation)
+			operation)
+		       ((member real-buffer autogit-open-buffers)
+			operation)
+		       (t nil))))
+	    (if msg (autogit-travel-path msg real-buffer) 't)
+	    (goto-char (point-min))))))
+    (setq autogit-active nil)))
+(defun autogit-read-hook ()
+  (autogit-hook-function 'read))
+(defun autogit-save-hook ()
+  (autogit-hook-function 'save))
+(defun autogit-kill-hook ()
+  (autogit-hook-function 'kill))
+#+end_src
+
+Emacs seems to create and kill temporary buffers while reading and writing
+files and kill-buffer-hook is called for those. That's why hook is aborted
+if the current buffer is not tracked by autogit.
+
+The cond statement in autogit-hook-function ensures that initially, when
+repository object does not track any files yet, killing or reverting can not
+happen and state machine optimisation assumptions are met.
+
+#+begin_src emacs-lisp :tangle ../autogit.el
+; after-save-hook
+(add-hook 'after-save-hook 'autogit-save-hook)
+; find-file-hook
+(add-hook 'find-file-hook 'autogit-read-hook)
+; kill-buffer-hook is special. It have to set in open callback because it
+;  may be buffer local.
+(add-hook 'kill-buffer-hook 'autogit-kill-hook)
+#+end_src
+
+
+* Program logic from LSTS file
+
+This script converts a state machine from LSTS form to elisp data structure.
+It is customised for autogit and requires state machine interface from
+TMaVT, which is easy to use front-end for Tampere Verification Tool
+(https://github.com/hessuvi/TampereVerificationTool). TMaVT is not published
+yet.
+
+There are two things which are specific to autogit. Variable name
+autogit-init-state and actions autogit-skip. The latter is supposed to be
+always succeeding no-op action and it is used to keep produced emacs-lisp
+code more readable.
+
+#+name: lsts_to_elisp_converter
+#+HEADER: :var LSTS="next_generation.lsts"
+#+begin_src python :results output
+import TMaVT.model_io as mio
+
+found_states = set()
+waiting = list()
+
+with file(LSTS, "r") as lsts :
+    data = mio.lsts_to_model(lsts)
+    waiting.append(data.getInitialState())
+    print r'(progn (setq autogit-init-state "st_%s")' % str( waiting[-1])
+    print "'("
+    while len(waiting) > 0 :
+        c_st = waiting.pop()
+        c_st_num = int(str(c_st))
+        if c_st_num in found_states :
+            continue
+        found_states.add(c_st_num)
+        tr_set = c_st.getOutTransitions()
+        ack_set = set( [ t.getAction() for t in tr_set ] )
+        if len( tr_set ) > 1 :
+            print r'  ("st_%s" autogit-skip (("waiting_input"' % str(c_st)
+            for tr in tr_set:
+                print r'      ( %s . "st_%s")' % ( tr.getAction(),
+                                                 tr.getDestState())
+                waiting.append(tr.getDestState())
+            print '     )  nil ) )'
+        else :
+            tr = c_st.getOutTransitions()[0]
+            ack = tr.getAction()
+            d_st = tr.getDestState()
+            next_trs = d_st.getOutTransitions()
+            next_ack = [ ( "%s" % t.getAction(), t.getDestState()) for t in next_trs]
+            print r'  ("st_%s" %s (' % (c_st, ack),
+            if len(next_ack) > 1 and next_ack[0][0][0:6]=="__ret_" :
+                next_ack.sort()
+                for (rv, ds) in next_ack :
+                    print r'"st_%s"' % ds ,
+                    waiting.append(ds)
+            else :
+                print r' "st_%s" "st_%s"' % (d_st, d_st) ,
+                waiting.append(d_st)
+            print ") )"
+    print '))'
+#+end_src
+
+* Makefile
+
+This is example, how state machine language notation is converted to visual
+representation. Visual representation can be viewed with tvt.modeller.
+Programs tvt.CFFD_normalize and tvt.illus are part of Tampere Verification
+Tool (https://github.com/hessuvi/TampereVerificationTool) and
+tvt.sm_lang_comp and tvt.modeller will be included in TMaVT when it is
+published.
+
+#+begin_src makefile :tangle Makefile
+%.illus: %.lsts
+	cat $< | tvt.illus - > $@
+
+%.lsts: %.sml
+	cat $< | tvt.sm_lang_comp | tvt.CFFD_normalize - - > $@
+#+end_src

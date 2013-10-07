@@ -1,0 +1,115 @@
+Begin Lsts
+
+Begin History
+
+ 1.7
+ "stdout"
+ "06.10.2013 09:29 tvt.SBreduction -"
+ "States: 28. Transitions: 43."
+
+ 1.6
+ "stdout"
+ "06.10.2013 09:29 tvt.ag2lsts -"
+ "States: 28. Transitions: 43."
+ "Run time: less than 5 sec."
+
+ 1.5
+ "stdout"
+ "06.10.2013 09:29 tvt.SBreduction -"
+ "States: 28. Transitions: 43."
+ "Run time: less than 5 sec."
+
+ 1.4
+ "stdout"
+ "06.10.2013 09:29 tvt.detag -"
+ "States: 28. Transitions: 43."
+ "Run time: less than 5 sec."
+
+ 1.3
+ "stdout"
+ "06.10.2013 09:29 tvt.lsts2ag -"
+ "States: 28. Transitions: 43."
+ "Run time: less than 5 sec."
+
+ 1.2
+ "stdout"
+ "06.10.2013 09:29 tvt.SBreduction -"
+ "States: 28. Transitions: 43."
+ "Run time: less than 5 sec."
+
+ 1.1
+ "stdout"
+ "06.10.2013 09:29 tvt.taureduction -"
+ "States: 35. Transitions: 55."
+ "Run time: less than 5 sec."
+
+ 1
+ "stdin"
+ "<no command line given>"
+
+End History
+
+Begin Header
+
+ State_cnt = 28
+ Action_cnt = 14
+ Transition_cnt = 43
+ Initial_states = 7;
+
+End Header
+
+Begin Action_names
+
+ 8 = "__ret_0"
+ 7 = "__ret_1"
+ 11 = "autogit-append"
+ 2 = "autogit-do-add"
+ 1 = "autogit-do-commit"
+ 6 = "autogit-do-pull"
+ 12 = "autogit-do-push"
+ 3 = "autogit-remove"
+ 9 = "autogit-revert-all"
+ 5 = "autogit-unsaved-changes"
+ 10 = "kill"
+ 14 = "open"
+ 4 = "revert"
+ 13 = "save"
+
+End Action_names
+
+Begin Transitions
+
+ 1: 4,7 18,8;
+ 2: 1,12;
+ 3: 22,7 2,8;
+ 4: 3,6;
+ 5: 4,7 7,8;
+ 6: 5,5;
+ 7: 8,4 16,10 11,13 24,14;
+ 8: 19,5;
+ 9: 17,7 17,8;
+ 10: 14,2;
+ 11: 10,11;
+ 12: 9,2;
+ 13: 12,11;
+ 14: 8,7 8,8;
+ 15: 17,3;
+ 16: 8,3;
+ 17: 23,5;
+ 18: 7,9;
+ 19: 27,7 7,8;
+ 20: 17,4 15,10 13,13 21,14;
+ 21: 20,11;
+ 22: 20,9;
+ 23: 26,7 20,8;
+ 24: 6,11;
+ 25: 4,7 4,8;
+ 26: 28,1;
+ 27: 25,1;
+ 28: 20,7 4,8;
+
+End Transitions
+
+End Lsts
+
+ "Run time: less than 5 sec."

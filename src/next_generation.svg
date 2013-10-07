@@ -1,0 +1,1822 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="833.74799"
+   width="964.25348"
+   version="1.1"
+   viewBox="0 0 964.25348 833.74799"
+   id="svg2"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="next_generation.svg">
+  <metadata
+     id="metadata540">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs538" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="489"
+     id="namedview536"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="0.23552894"
+     inkscape:cx="474.5"
+     inkscape:cy="398.5"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <rect
+     rx="0"
+     ry="0"
+     height="1002"
+     width="1154"
+     y="-65.751999"
+     x="-102.5"
+     id="rect4"
+     style="fill:#ffffff" />
+  <g
+     id="automaton"
+     transform="translate(-102.5,-65.752)">
+    <g
+       id="g7"
+       style="fill:#8010ff;stroke:#8010ff;stroke-width:1">
+      <defs
+         id="defs9">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0020"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path12"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 694,688 282,98"
+         id="path14"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0020)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="730"
+         x="835"
+         id="text16">revert</text>
+    </g>
+    <g
+       id="g18"
+       style="fill:#ffa0ff;stroke:#ffa0ff;stroke-width:1">
+      <defs
+         id="defs20">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0053"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path23"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 694,680 816,636"
+         id="path25"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0053)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="651"
+         x="755"
+         id="text27">kill</text>
+    </g>
+    <g
+       id="g29"
+       style="fill:#800000;stroke:#800000;stroke-width:1">
+      <defs
+         id="defs31">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0036"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path34"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 692,676 98,-98"
+         id="path36"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0036)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="620"
+         x="741"
+         id="text38">save</text>
+    </g>
+    <g
+       id="g40"
+       style="fill:#80ff80;stroke:#80ff80;stroke-width:1">
+      <defs
+         id="defs42">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0085"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path45"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 678,675 609,562"
+         id="path47"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0085)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="611.5"
+         x="643.5"
+         id="text49">open</text>
+    </g>
+    <g
+       id="g51"
+       style="fill:#e0e000;stroke:#e0e000;stroke-width:1">
+      <defs
+         id="defs53">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0025"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path56"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 975,791 724,805"
+         id="path58"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0025)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="791"
+         x="849.5"
+         id="text60">autogit-unsaved-changes</text>
+    </g>
+    <g
+       id="g62"
+       style="fill:#00e000;stroke:#00e000;stroke-width:1">
+      <defs
+         id="defs64">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0051"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path67"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 834,640 978,782"
+         id="path69"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0051)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="704"
+         x="906"
+         id="text71">autogit-remove</text>
+    </g>
+    <g
+       id="g73"
+       style="fill:#a0ff00;stroke:#a0ff00;stroke-width:1">
+      <defs
+         id="defs75">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0034"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path78"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 809,570 92,0"
+         id="path80"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0034)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="563"
+         x="855"
+         id="text82">autogit-append</text>
+    </g>
+    <g
+       id="g84"
+       style="fill:#a0ff00;stroke:#a0ff00;stroke-width:1">
+      <defs
+         id="defs86">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0083"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path89"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 596,562 -58,80"
+         id="path91"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0083)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="595"
+         x="567"
+         id="text93">autogit-append</text>
+    </g>
+    <g
+       id="g95"
+       style="fill:#ffa040;stroke:#ffa040;stroke-width:1">
+      <defs
+         id="defs97">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0066"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path100"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 704,812 589,882"
+         id="path102"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0066)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="840"
+         x="646.5"
+         id="text104">__ret_1</text>
+    </g>
+    <g
+       id="g106"
+       style="fill:#00a0ff;stroke:#00a0ff;stroke-width:1">
+      <defs
+         id="defs108">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0105"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path111"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 710,795 687,695"
+         id="path113"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0105)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="738"
+         x="698.5"
+         id="text115">__ret_0</text>
+    </g>
+    <g
+       id="g117"
+       style="fill:#0000ff;stroke:#0000ff;stroke-width:1">
+      <defs
+         id="defs119">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0031"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path122"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 921,577 110,88"
+         id="path124"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0031)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="614"
+         x="976"
+         id="text126">autogit-do-add</text>
+    </g>
+    <g
+       id="g128"
+       style="fill:#e0e000;stroke:#e0e000;stroke-width:1">
+      <defs
+         id="defs130">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0017"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path133"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 540,658 q 38,28 31,129"
+         id="path135"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0017)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="679"
+         x="578"
+         id="text137">autogit-unsaved-changes</text>
+    </g>
+    <g
+       id="g139"
+       style="fill:#ff0000;stroke:#ff0000;stroke-width:1">
+      <defs
+         id="defs141">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0094"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path144"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 569,885 388,842"
+         id="path146"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0094)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="856.5"
+         x="478.5"
+         id="text148">autogit-do-commit</text>
+    </g>
+    <g
+       id="g150"
+       style="fill:#ffa040;stroke:#ffa040;stroke-width:1">
+      <defs
+         id="defs152">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0045"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path155"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 1032,680 q -32,31 -44,99"
+         id="path157"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0045)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="704"
+         x="1000"
+         id="text159">__ret_1</text>
+    </g>
+    <g
+       id="g161"
+       style="fill:#00a0ff;stroke:#00a0ff;stroke-width:1">
+      <defs
+         id="defs163">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0107"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path166"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 1041,683 q 4,55 -47,100"
+         id="path168"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0107)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="731"
+         x="1045"
+         id="text170">__ret_0</text>
+    </g>
+    <g
+       id="g172"
+       style="fill:#ffa040;stroke:#ffa040;stroke-width:1">
+      <defs
+         id="defs174">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0014"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path177"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 562,790 464,692"
+         id="path179"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0014)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="734"
+         x="513"
+         id="text181">__ret_1</text>
+    </g>
+    <g
+       id="g183"
+       style="fill:#00a0ff;stroke:#00a0ff;stroke-width:1">
+      <defs
+         id="defs185">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0022"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path188"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 578,790 98,-98"
+         id="path190"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0022)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="734"
+         x="627"
+         id="text192">__ret_0</text>
+    </g>
+    <g
+       id="g194"
+       style="fill:#ffa040;stroke:#ffa040;stroke-width:1">
+      <defs
+         id="defs196">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0088"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path199"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 385,831 q 50,-47 69,-136"
+         id="path201"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0088)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="777"
+         x="435"
+         id="text203">__ret_1</text>
+    </g>
+    <g
+       id="g205"
+       style="fill:#00a0ff;stroke:#00a0ff;stroke-width:1">
+      <defs
+         id="defs207">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0101"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path210"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 377,828 q -2,-80 70,-137"
+         id="path212"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0101)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="741"
+         x="375"
+         id="text214">__ret_0</text>
+    </g>
+    <g
+       id="g216"
+       style="fill:#008000;stroke:#008000;stroke-width:1">
+      <defs
+         id="defs218">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0011"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path221"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 448,676 370,592"
+         id="path223"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0011)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="627"
+         x="409"
+         id="text225">autogit-do-pull</text>
+    </g>
+    <g
+       id="g227"
+       style="fill:#ffa040;stroke:#ffa040;stroke-width:1">
+      <defs
+         id="defs229">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0008"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path232"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 365,573 395,460"
+         id="path234"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0008)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="509.5"
+         x="380"
+         id="text236">__ret_1</text>
+    </g>
+    <g
+       id="g238"
+       style="fill:#00a0ff;stroke:#00a0ff;stroke-width:1">
+      <defs
+         id="defs240">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0099"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path243"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 369,576 498,433"
+         id="path245"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0099)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="497.5"
+         x="433.5"
+         id="text247">__ret_0</text>
+    </g>
+    <g
+       id="g249"
+       style="fill:#e060e0;stroke:#e060e0;stroke-width:1">
+      <defs
+         id="defs251">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0077"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path254"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 397,438 q -3,-19 -49,-87"
+         id="path256"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0077)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="412"
+         x="394"
+         id="text258">autogit-revert-all</text>
+    </g>
+    <g
+       id="g260"
+       style="fill:#000080;stroke:#000080;stroke-width:1">
+      <defs
+         id="defs262">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0005"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path265"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 512,434 q 31,38 15,70"
+         id="path267"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0005)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="465"
+         x="543"
+         id="text269">autogit-do-push</text>
+    </g>
+    <g
+       id="g271"
+       style="fill:#8010ff;stroke:#8010ff;stroke-width:1">
+      <defs
+         id="defs273">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0069"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path276"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 336,333 215,154"
+         id="path278"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0069)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="236.5"
+         x="275.5"
+         id="text280">revert</text>
+    </g>
+    <g
+       id="g282"
+       style="fill:#ffa0ff;stroke:#ffa0ff;stroke-width:1">
+      <defs
+         id="defs284">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0111"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path287"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 345,331 383,190"
+         id="path289"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0111)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="253.5"
+         x="364"
+         id="text291">kill</text>
+    </g>
+    <g
+       id="g293"
+       style="fill:#800000;stroke:#800000;stroke-width:1">
+      <defs
+         id="defs295">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0109"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path298"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 353,342 107,5"
+         id="path300"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0109)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="337.5"
+         x="406.5"
+         id="text302">save</text>
+    </g>
+    <g
+       id="g304"
+       style="fill:#80ff80;stroke:#80ff80;stroke-width:1">
+      <defs
+         id="defs306">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0074"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path309"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 331,345 Q 288,357 224,332"
+         id="path311"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0074)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="350"
+         x="288"
+         id="text313">open</text>
+    </g>
+    <g
+       id="g315"
+       style="fill:#ffa040;stroke:#ffa040;stroke-width:1">
+      <defs
+         id="defs317">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0002"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path320"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 518,524 460,674"
+         id="path322"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0002)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="592"
+         x="489"
+         id="text324">__ret_1</text>
+    </g>
+    <g
+       id="g326"
+       style="fill:#00a0ff;stroke:#00a0ff;stroke-width:1">
+      <defs
+         id="defs328">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0063"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path331"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 533,511 695,462"
+         id="path333"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0063)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="479.5"
+         x="614"
+         id="text335">__ret_0</text>
+    </g>
+    <g
+       id="g337"
+       style="fill:#e0e000;stroke:#e0e000;stroke-width:1">
+      <defs
+         id="defs339">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0056"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path342"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 207,156 158,437"
+         id="path344"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0056)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="289.5"
+         x="182.5"
+         id="text346">autogit-unsaved-changes</text>
+    </g>
+    <g
+       id="g348"
+       style="fill:#00e000;stroke:#00e000;stroke-width:1">
+      <defs
+         id="defs350">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0048"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path353"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 375,177 220,147"
+         id="path355"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0048)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="155"
+         x="297.5"
+         id="text357">autogit-remove</text>
+    </g>
+    <g
+       id="g359"
+       style="fill:#a0ff00;stroke:#a0ff00;stroke-width:1">
+      <defs
+         id="defs361">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0042"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path364"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 473,336 496,168"
+         id="path366"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0042)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="245"
+         x="484.5"
+         id="text368">autogit-append</text>
+    </g>
+    <g
+       id="g370"
+       style="fill:#a0ff00;stroke:#a0ff00;stroke-width:1">
+      <defs
+         id="defs372">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0072"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path375"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 225,326 q 53,-10 107,12"
+         id="path377"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0072)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="309"
+         x="278"
+         id="text379">autogit-append</text>
+    </g>
+    <g
+       id="g381"
+       style="fill:#e060e0;stroke:#e060e0;stroke-width:1">
+      <defs
+         id="defs383">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0061"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path386"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 705,470 685,673"
+         id="path388"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0061)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="564.5"
+         x="695"
+         id="text390">autogit-revert-all</text>
+    </g>
+    <g
+       id="g392"
+       style="fill:#ffa040;stroke:#ffa040;stroke-width:1">
+      <defs
+         id="defs394">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0080"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path397"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 152,458 118,560"
+         id="path399"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0080)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="502"
+         x="135"
+         id="text401">__ret_1</text>
+    </g>
+    <g
+       id="g403"
+       style="fill:#00a0ff;stroke:#00a0ff;stroke-width:1">
+      <defs
+         id="defs405">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0113"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path408"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 166,443 332,347"
+         id="path410"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0113)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="388"
+         x="249"
+         id="text412">__ret_0</text>
+    </g>
+    <g
+       id="g414"
+       style="fill:#0000ff;stroke:#0000ff;stroke-width:1">
+      <defs
+         id="defs416">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0039"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path419"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 489,151 391,89"
+         id="path421"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0039)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="113"
+         x="440"
+         id="text423">autogit-do-add</text>
+    </g>
+    <g
+       id="g425"
+       style="fill:#ff0000;stroke:#ff0000;stroke-width:1">
+      <defs
+         id="defs427">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0091"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path430"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 124,575 113,62"
+         id="path432"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0091)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="599"
+         x="180.5"
+         id="text434">autogit-do-commit</text>
+    </g>
+    <g
+       id="g436"
+       style="fill:#ffa040;stroke:#ffa040;stroke-width:1">
+      <defs
+         id="defs438">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0028"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path441"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 372,88 q -62,32 -152,54"
+         id="path443"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0028)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="113"
+         x="310"
+         id="text445">__ret_1</text>
+    </g>
+    <g
+       id="g447"
+       style="fill:#00a0ff;stroke:#00a0ff;stroke-width:1">
+      <defs
+         id="defs449">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0058"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path452"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 371,83 q -88,1 -154,55"
+         id="path454"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0058)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="77"
+         x="283"
+         id="text456">__ret_0</text>
+    </g>
+    <g
+       id="g458"
+       style="fill:#ffa040;stroke:#ffa040;stroke-width:1">
+      <defs
+         id="defs460">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0097"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path463"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="M 250,632 339,352"
+         id="path465"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0097)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="485"
+         x="294.5"
+         id="text467">__ret_1</text>
+    </g>
+    <g
+       id="g469"
+       style="fill:#00a0ff;stroke:#00a0ff;stroke-width:1">
+      <defs
+         id="defs471">
+        <marker
+           refY="40"
+           refX="101"
+           markerUnits="userSpaceOnUse"
+           orient="auto"
+           viewBox="0 0 100 80"
+           markerWidth="9"
+           id="AH0103"
+           markerHeight="7">
+          <path
+             d="M 20,40 0,0 100,40 0,80 z"
+             id="path474"
+             inkscape:connector-curvature="0" />
+        </marker>
+      </defs>
+      <path
+         d="m 258,644 187,38"
+         id="path476"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke-dasharray:none;marker-end:url(#AH0103)" />
+      <text
+         style="font-size:16px;font-stretch:condensed;text-anchor:middle;stroke:none;font-family:Nimbus Sans L"
+         font-size="16"
+         font-stretch="condensed"
+         y="656"
+         x="351.5"
+         id="text478">__ret_0</text>
+    </g>
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="684"
+       cx="684"
+       id="ellipse480"
+       sodipodi:cx="684"
+       sodipodi:cy="684"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#00ffff;stroke:#000000"
+       d="m 695,684 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="790"
+       cx="986"
+       id="ellipse482"
+       sodipodi:cx="986"
+       sodipodi:cy="790"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 997,790 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="632"
+       cx="826"
+       id="ellipse484"
+       sodipodi:cx="826"
+       sodipodi:cy="632"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 837,632 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="570"
+       cx="798"
+       id="ellipse486"
+       sodipodi:cx="798"
+       sodipodi:cy="570"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 809,570 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="553"
+       cx="603"
+       id="ellipse488"
+       sodipodi:cx="603"
+       sodipodi:cy="553"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 614,553 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="806"
+       cx="713"
+       id="ellipse490"
+       sodipodi:cx="713"
+       sodipodi:cy="806"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 724,806 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="570"
+       cx="912"
+       id="ellipse492"
+       sodipodi:cx="912"
+       sodipodi:cy="570"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 923,570 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="651"
+       cx="531"
+       id="ellipse494"
+       sodipodi:cx="531"
+       sodipodi:cy="651"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 542,651 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="888"
+       cx="580"
+       id="ellipse496"
+       sodipodi:cx="580"
+       sodipodi:cy="888"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 591,888 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="672"
+       cx="1040"
+       id="ellipse498"
+       sodipodi:cx="1040"
+       sodipodi:cy="672"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 1051,672 c 0,6.07513 -4.9249,11 -11,11 -6.0751,0 -11,-4.92487 -11,-11 0,-6.07513 4.9249,-11 11,-11 6.0751,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="798"
+       cx="570"
+       id="ellipse500"
+       sodipodi:cx="570"
+       sodipodi:cy="798"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 581,798 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="839"
+       cx="377"
+       id="ellipse502"
+       sodipodi:cx="377"
+       sodipodi:cy="839"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 388,839 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="684"
+       cx="456"
+       id="ellipse504"
+       sodipodi:cx="456"
+       sodipodi:cy="684"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 467,684 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="584"
+       cx="362"
+       id="ellipse506"
+       sodipodi:cx="362"
+       sodipodi:cy="584"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 373,584 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="449"
+       cx="398"
+       id="ellipse508"
+       sodipodi:cx="398"
+       sodipodi:cy="449"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 409,449 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="425"
+       cx="505"
+       id="ellipse510"
+       sodipodi:cx="505"
+       sodipodi:cy="425"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 516,425 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="342"
+       cx="342"
+       id="ellipse512"
+       sodipodi:cx="342"
+       sodipodi:cy="342"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 353,342 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="514"
+       cx="522"
+       id="ellipse514"
+       sodipodi:cx="522"
+       sodipodi:cy="514"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 533,514 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="145"
+       cx="209"
+       id="ellipse516"
+       sodipodi:cx="209"
+       sodipodi:cy="145"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 220,145 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="179"
+       cx="386"
+       id="ellipse518"
+       sodipodi:cx="386"
+       sodipodi:cy="179"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 397,179 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="347"
+       cx="471"
+       id="ellipse520"
+       sodipodi:cx="471"
+       sodipodi:cy="347"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 482,347 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="328"
+       cx="214"
+       id="ellipse522"
+       sodipodi:cx="214"
+       sodipodi:cy="328"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 225,328 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="459"
+       cx="706"
+       id="ellipse524"
+       sodipodi:cx="706"
+       sodipodi:cy="459"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 717,459 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="448"
+       cx="156"
+       id="ellipse526"
+       sodipodi:cx="156"
+       sodipodi:cy="448"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 167,448 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="157"
+       cx="498"
+       id="ellipse528"
+       sodipodi:cx="498"
+       sodipodi:cy="157"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 509,157 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="570"
+       cx="114"
+       id="ellipse530"
+       sodipodi:cx="114"
+       sodipodi:cy="570"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 125,570 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="83"
+       cx="382"
+       id="ellipse532"
+       sodipodi:cx="382"
+       sodipodi:cy="83"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 393,83 c 0,6.075132 -4.92487,11 -11,11 -6.07513,0 -11,-4.924868 -11,-11 0,-6.075132 4.92487,-11 11,-11 6.07513,0 11,4.924868 11,11 z" />
+    <ellipse
+       rx="11"
+       ry="11"
+       cy="642"
+       cx="247"
+       id="ellipse534"
+       sodipodi:cx="247"
+       sodipodi:cy="642"
+       sodipodi:rx="11"
+       sodipodi:ry="11"
+       style="fill:#ffffff;stroke:#000000"
+       d="m 258,642 c 0,6.07513 -4.92487,11 -11,11 -6.07513,0 -11,-4.92487 -11,-11 0,-6.07513 4.92487,-11 11,-11 6.07513,0 11,4.92487 11,11 z" />
+  </g>
+</svg>
