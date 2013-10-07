@@ -3,7 +3,7 @@
 Version: alpha - 0.1 (not a true mode yet)
 Copyright: Heikki Virtanen (2013)
 License: GPL
-Homepage: https://github.com/hessuvi/autogit_mode
+Homepage: https://github.com/hessuvi/autogit-mode
 
 Purpose: Keep working repository (and opened files) in sync with its
          upstream automatically.
