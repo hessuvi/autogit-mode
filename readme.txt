@@ -19,10 +19,12 @@ Setting up:
   + Ones:
     - git config --global merge.conflictstyle diff3
     - git config --global push.default upstream
+      (For older git version (<1.7.5):
+           git config --global push.default tracking)
 
   + For each repository and branch, which are intended to be synced
     automatically:
-    - git branch --set-upstream ...
+    - git branch --set-upstream <local session branch> <remote session branch>
 
 Usage:
   - emacs --load <path to autogit.el>

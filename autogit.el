@@ -19,10 +19,12 @@
 ;;   + Ones:
 ;;     - git config --global merge.conflictstyle diff3
 ;;     - git config --global push.default upstream
+;;       (For older git version (<1.7.5):
+;;            git config --global push.default tracking)
 ;; 
 ;;   + For each repository and branch, which are intended to be synced
 ;;     automatically:
-;;     - git branch --set-upstream ...
+;;     - git branch --set-upstream <local session branch> <remote session branch>
 ;; 
 ;; Usage:
 ;;   - emacs --load <path to autogit.el>
@@ -177,7 +179,7 @@
 
 (defun autogit-do-pull (buff)
   (insert (concat "git pull in " (buffer-name) "\n"))
-  (equal 0 (call-process "git" nil nil nil "pull" "--no-edit")))
+  (equal 0 (call-process "git" nil nil nil "pull")))
 
 (defun autogit-do-push (buff)
   (insert (concat "git push in " (buffer-name) "\n"))
@@ -231,3 +233,4 @@
 ; kill-buffer-hook is special. It have to set in open callback because it
 ;  may be buffer local.
 (add-hook 'kill-buffer-hook 'autogit-kill-hook)
+(setenv "GIT_MERGE_AUTOEDIT" "no")

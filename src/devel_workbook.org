@@ -1,6 +1,8 @@
 #+PROPERTY: noweb yes
 #+PROPERTY: padline no
 
+# https://github.com/hessuvi/autogit-mode
+
 # Muista tehdä linkki TMaVT osoittamaan oikeaan paikkaan, joka on kirjasto,
 # josta löytyy model_io.py. Tarvitaan, kun LSTS käännetään lisp-rakenteeksi.
 # Tällä hetkellä lisätyökaluja ei välttämättä tarvita autogit.el tiedoston
@@ -43,10 +45,12 @@ Setting up:
   + Ones:
     - git config --global merge.conflictstyle diff3
     - git config --global push.default upstream
+      (For older git version (<1.7.5):
+           git config --global push.default tracking)
 
   + For each repository and branch, which are intended to be synced
     automatically:
-    - git branch --set-upstream ...
+    - git branch --set-upstream <local session branch> <remote session branch>
 
 Usage:
   - emacs --load <path to autogit.el>
@@ -188,19 +192,7 @@ Käyttäjän pitäisi osata
 
 * Development notes
 
-** DONE Toteutusvälineet: SM-lang kieleen monta tapahtuman lopputilaa
-
-Seuraavassa on käytetty uutta funktiokutsun kaltaista syntaksia, jossa
-sanoman paluuarvo määrää lopputilan. Tilakonekielen kääntäjään pitää vielä
-ohjelmoida vastaava rakenne. Toteutusarvaus on, että ensin funktiokutsua
-vastaava tilasiirtymä ja sen lopputilasta indeksiin perustuvat sisäiset
-siirtymät määriteltyihin lopputiloihin.
-
-Seuraavia tiedostoja tarvitsee muuttaa.
-file:~/Tutkimus/Tools/TVT-AddOns/sm_lang_comp.py
-file:~/Tutkimus/Tools/TVT-AddOns/TMaVT/tok_sm_lang.py
-
-** TODO Muistiinpanoja mietinnässä olevista asioista [5/8]
+** TODO Muistiinpanoja mietinnässä olevista asioista [5/12]
 
 Seuraavassa vielä hieman löydettyjä puutteita ja toteutuksessa huomioon
 otettavia asioita:
@@ -246,20 +238,64 @@ otettavia asioita:
   - [ ] Rakentaa autogit oikeaksi gloaaliksi modeksi, jonka saa autogit-mode
     funktiota ajamalla päälle ja pois.
 
+  - [ ] Suuria projekteja verten pitänee kartoittaa mahdollisuutta ajaa git
+    push tausta-ajona, jolloin käyttäjä pääsee nopeammin takaisin työn
+    pariin. Ongelmaksi muodostuu silloin pushin epäonnistuminen. Asian voisi
+    kenties korjata sillä, että lisää Emacsin tilariville merkin, että näin
+    on käynyt, jotta käyttäjä voi tallentaa työnsä uudelleen.
+
+  - [ ] Lokiin pitää lisätä aikaleima, jotta saa paremmin seurattua
+    järjestelmän tekemisiä.
+
+  - [ ] Gitin lokiviestiin käyttäjätunnus. Paitsi että git taitaa
+    kyllä hoitaa tämän itsekin. Sen sijaan logiviestin voisi käydä
+    keräämässä sopivasti nimetystä bufferista/muuttujasta ja jos siinä
+    on vaikkapa %d tagi, niin se korvattaisiin kasvavalla numerolla.
+
+  - [ ] Automated test system
+
+
+** Git version specific notes
+
+Older git version command git pull do not recognise option
+--no-edit. The option was introduced in git version v1.7.8. and commit
+message editing is initiated if not prevented explicitly. Solution for
+preventing message editing in all git version is environment variable
+#+begin_src sh
+  #!/bin/sh
+  GIT_MERGE_AUTOEDIT=no
+  export GIT_MERGE_AUTOEDIT
+#+end_src
+
+#+name: preventing_git_pull_msg_editing
+#+begin_src emacs-lisp
+(setenv "GIT_MERGE_AUTOEDIT" "no")
+#+end_src
+
+
 * Implementation
 
 ** Behavioural model for repository object
 
-[2013-09-30 ma] Tässä vielä kerran uusiksi tehty repositoryn toimintaa
-vastaava tilakone. Nyt tekemisen mallina oli iteratiivinen prosessi.
-Kuvataan lineaarisia sekvenssejä ja haarautumisen paikoissa laitetaan muihin
-vaihtoehtoihin lukkiuma merkiksi. Näistä keskeneräisiksi jääneistä kohdista
-jatkettiin myöhemmin. Myöskään tilakoneen yksinkertaisuuteen tai
-ylläpidettävyyteen ei kiinnitetty erityistä huomiota. Korvaukseksi tein
-python scriptin, joka muuntaa kutistetun tilakoneen sellaiseen muotoon, että
-siinä voi samoilla elispillä.
+The behavioural model is based on operation scenarios. For example, when
+user saves a file, file is first added to the staging area for committing.
+If there is no unsaved changes, commit is actually done, changes from
+upstream is pulled and merged, upstream is updated with push, and finally,
+open buffers are reverted to reflect changes on their corresponding files.
+This and all other scenarios is combined to transition based state machine
+(transitions are labelled with actions and states are anonymous join
+points between transitions).
 
-#+begin_src fundamental :tangle uusi_versio.sml
+Actions open, save, kill, and revert are user actions and they are
+triggering events. Actions with autogit prefix are system actions and those
+are executed as response to stimuli.
+
+Following is the raw, unpolished version in the form it was manually
+written. However, this is not the true original version. The work flow and
+tools was evolving and this is the first version in format which can be
+translated to Emacs lisp data structure algorithmically.
+#+name: raw_operation_scenarios_combined
+#+begin_src fundamental
 REPO -> i_wait
  * i_wait : "open" -> s1
    	    "kill" -> i_wait
@@ -306,12 +342,19 @@ REPO -> i_wait
  * rX : "autogit-remove" -> rC
 #+end_src
 
-[2013-10-01 ti] Yllä olevaa lienee mahdollista optimoida tuottamaan
-pienempi ajettava LSTS. Koska repon alkutilassa voi tulla vain heräte
-open tai save, niin on aivan sama, minne revert ja kill
-ohjataan. Sopivilla valinnoilla lopputuloksessa tilat i_wait ja n_wait
-saattaisivat yhdistyä. Teorian tasolla tämän mahdollisuuden voi
-testata, kytkemällä eri vaihtoehtojen rinnalle tilakoneen
+The manually written version above is not optimal and there would be
+unnecessary many states in the final, translated version. It is good
+modelling style that all possible input actions are enabled in every stable
+state in which inputs are waited. However, inputs kill and revert can not
+arrive initially. After selecting responses for these inputs carefully, it
+is possible that states i_wait and n_wait will be equal.
+
+To prove that, it is assumed that initially only inputs open and save are
+possible. This assumption is expressed with the following state machine, say
+A. Let the previous state machine be X. Any state machine Y is valid model
+for system behaviour, if parallel compositions X || P and Y || P are
+equivalent. Of course, the assumption have to be verified from
+implementation later.
 #+begin_src fundamental :tangle repo_usage.sml
 REPO_USE -> s0
  * s0 : "open" -> s1
@@ -640,7 +683,7 @@ on the fly during tangling.
 
 (defun autogit-do-pull (buff)
   (insert (concat "git pull in " (buffer-name) "\n"))
-  (equal 0 (call-process "git" nil nil nil "pull" "--no-edit")))
+  (equal 0 (call-process "git" nil nil nil "pull")))
 
 (defun autogit-do-push (buff)
   (insert (concat "git push in " (buffer-name) "\n"))
@@ -712,6 +755,11 @@ happen and state machine optimisation assumptions are met.
 (add-hook 'kill-buffer-hook 'autogit-kill-hook)
 #+end_src
 
+** Other global setups
+
+#+begin_src emacs-lisp :tangle ../autogit.el
+<<preventing_git_pull_msg_editing>>
+#+end_src
 
 * Program logic from LSTS file
 
