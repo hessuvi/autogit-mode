@@ -445,7 +445,8 @@ START -> st_6
  * st_15 : "autogit-remove" -> st_7
 #+end_src
 ./next_generation.svg
-
+#+CAPTION: Program skeleton as a transition system
+[[./next_generation.png]]
 
 Seuraavassa on vanha versio, jonka kääntäminen ajettavaksi LSTS:ksi ei olisi
 ollut mahdollista. Tai olisi saattanut ollakin, mutta halusin kokeilla,
